@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function room_reservation_alter_theme_registry_alter(&$theme_registry) {
+  $path = drupal_get_path('module','room_reservation_alter');
+  if (isset($theme_registry['room_reservations'])) {
+    $theme_registry['room_reservations']['includes'][] = $path . '/theme/room_reservations_calendar.view.inc';
+    $theme_registry['room_reservations']['function'] = 'altered_room_reservations';
+  }
+}
