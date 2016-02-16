@@ -2,6 +2,13 @@
 /**
  * @file
  * Calendar view functionality.
+ *
+ * Adapted from the original room_reservations_calendar.view.inc,
+ * with adjustments here to include the original file, since this
+ * file only includes the theme function.
+ * Alterations are wrapped in the comment:
+ * // Override for rooms.library.upei.ca
+ *
  */
 
 module_load_include('inc', 'room_reservations', '/view/room_reservations.view');
