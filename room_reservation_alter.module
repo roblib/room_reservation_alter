@@ -10,3 +10,13 @@ function room_reservation_alter_theme_registry_alter(&$theme_registry) {
     $theme_registry['room_reservations']['function'] = 'altered_room_reservations';
   }
 }
+
+/**
+ * Implements hook_views_api
+ */
+function room_reservation_alter_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'room_reservation_alter'),
+  );
+}
