@@ -27,7 +27,7 @@ class room_reservation_alter_handler_label extends views_handler_field {
 // data provided by fields previously added in your view.
 // Insert PHP code here, or display greeting.
     $node = node_load($data->nid);
-    dpm($node);
+    //dpm($node);
 
     $private = isset($node->reservation_block_title) ? $node->reservation_block_title['und'][0]['value'] : 0;
     if ($private) {
