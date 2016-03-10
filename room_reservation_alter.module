@@ -20,3 +20,23 @@ function room_reservation_alter_views_api() {
     'path' => drupal_get_path('module', 'room_reservation_alter'),
   );
 }
+
+/**
+ * Implements hook_menu().
+ */
+function room_reservation_alter_menu() {
+  $items['room_reservations/hours'] = array(
+    'page callback' => 'room_reservation_alter_hours_callback',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Callback to return the room reservation opening hours in json.
+ */
+function room_reservation_alter_hours_callback() {
+  module_load_include('inc', 'room_reservations', 'room_reservations');
+  $hours = _room_reservations_facility_hours();
+  drupal_json_output($hours);
+}
