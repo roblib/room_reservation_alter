@@ -3,4 +3,7 @@ description = Rewrites the login link for a room reservation to Shibboleth login
 core = 7.x
 version = 7.x-1.2
 
+dependencies[] = views
+dependencies[] = room_reservations
+
 files[] = views/room_reservation_alter_handler_label.inc

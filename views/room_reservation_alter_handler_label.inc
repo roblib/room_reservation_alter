@@ -6,7 +6,7 @@
  */
 
 /**
- * Provides a custom views field.
+ * Provides a custom views field for Room Reservation nodes.
  */
 class room_reservation_alter_handler_label extends views_handler_field {
   function option_definition() {

@@ -6,8 +6,8 @@
  */
 
 /**
- * Implementation of hook_views_handlers() to register all of the basic handlers
- * views uses.
+ * Implementation of hook_views_handlers()
+ * Creates a custom field handler that hides the booking name if private.
  */
 function room_reservation_alter_views_handlers() {
   return array(
@@ -15,9 +15,7 @@ function room_reservation_alter_views_handlers() {
       'path' => drupal_get_path('module', 'room_reservation_alter'),
     ),
     'handlers' => array(
-// The name of my handler
       'room_reservation_alter_handler_label' => array(
-// The name of the handler we are extending.
         'parent' => 'views_handler_field',
       ),
     ),
@@ -29,13 +27,11 @@ function room_reservation_alter_views_handlers() {
  */
 function room_reservation_alter_views_data() {
   $data = array();
-// Add Example group
   $data['room_reservation_alter']['table']['group'] = t('Custom');
   $data['room_reservation_alter']['table']['join'] = array(
-// #global is a special flag which lets a table appear all the time.
     '#global' => array(),
   );
-// Add custom field
+  // Add custom field
   $data['room_reservation_alter']['custom_field'] = array(
     'title' => t('Room Reservation Altered Label'),
     'help' => t('Hides the group name if Private.'),
