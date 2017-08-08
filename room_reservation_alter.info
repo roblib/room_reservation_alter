@@ -1,9 +1,11 @@
 name = Room Reservation Alter
 description = Rewrites the login link for a room reservation to Shibboleth login.
 core = 7.x
-version = 7.x-1.2
+version = 7.x-2.x-dev
 
 dependencies[] = views
 dependencies[] = room_reservations
+dependencies[] = services_views
+dependencies[] = shib_auth
 
 files[] = views/room_reservation_alter_handler_label.inc
